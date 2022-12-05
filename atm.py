@@ -110,14 +110,15 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
                         sodu_atm2[0] -= ruttien
                         gioihan2 = gioihan2 - ruttien
                         changehanmuc2[stt2] = gioihan2
+                        print('BẠN CÓ MUỐN NHẬN HÓA ĐƠN KHÔNG?\n*1. Có\n*2. Không')
                         while True:
-                            bienlai = str(input('BẠN CÓ MUỐN NHẬN HÓA ĐƠN KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-                            if bienlai == '1':
+                            bienlai = int(input('Chọn: '))
+                            if bienlai == 1:
                                 print(header2.center(27))
                                 print(f'CHỦ THẺ: {tk2}\nSỐ TIỀN ĐÃ RÚT: {ruttien} VNĐ\nSỐ DƯ: {tien2} VNĐ')
                                 print(header2.center(27))
                                 break
-                            elif bienlai == '2':
+                            elif bienlai == 2:
                                 print(header2.center(48))
                                 print('GIAO DỊCH HOÀN THÀNH, XIN VUI LÒNG ĐỢI NHẬN TIỀN')
                                 print(header2.center(48))
@@ -134,6 +135,7 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
                 print(header2.center(36))
                 print('SỐ DƯ KHÔNG ĐỦ, XIN VUI LÒNG THỬ LẠI')
                 print(header2.center(36))
+        break
 
 
 def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, stt3):
@@ -166,17 +168,19 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
                         sodu_atm3[0] -= chuyentien
                         gioihan3 = gioihan3 - chuyentien
                         changehanmuc3[stt3] = gioihan3
+                        print('BẠN CÓ MUỐN NHẬN HÓA ĐƠN KHÔNG?\n*1. Có\n*2. Không')
                         while True:
-                            bienlai = str(input('BẠN CÓ MUỐN NHẬN HÓA ĐƠN KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-                            if bienlai == '1':
+                            bienlai = int(input('Chọn: '))
+                            if bienlai == 1:
                                 print(header3.center(27))
                                 print(f'SỐ TÀI KHOẢN NGƯỜI NHẬN: {stk}\nSỐ TIỀN ĐÃ CHUYỂN: {chuyentien} VNĐ\nSỐ DƯ: {tien3} VNĐ')
                                 print(header3.center(27))
                                 break
-                            elif bienlai == '2':
-                                print(header3.center(48))
+                            elif bienlai == 2:
+                                print(header3.center(20))
                                 print('GIAO DỊCH HOÀN THÀNH')
-                                print(header3.center(48))
+                                print(header3.center(20))
+                                break
                             else:
                                 print(header3.center(44))
                                 print('CHỨC NĂNG KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
@@ -189,6 +193,7 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
                 print(header3.center(36))
                 print('SỐ DƯ KHÔNG ĐỦ, XIN VUI LÒNG THỬ LẠI')
                 print(header3.center(36))
+        break
 
 
 def chucnang4(header4, pin4, stt4):
