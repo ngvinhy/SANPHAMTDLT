@@ -30,28 +30,28 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
         chucnang = str(input('CHỌN CHỨC NĂNG BẠN MUỐN SỬ DỤNG: '))
         if chucnang == '1':
             chucnang1(header, tk, tien, gioihan)
-            q = str(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-            if q == '2':
+            q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
+            if q == 2:
                 break
-            elif q != '1' and q != '2':
+            elif q != 1 and q != 2:
                 print(header.center(61))
                 print('CHỨC NĂNG KHÔNG HỢP LỆ, BẠN SẼ ĐƯỢC CHUYỂN ĐẾN MÀN HÌNH CHÍNH')
                 print(header.center(61))
         elif chucnang == '2':
             chucnang2(header, tk, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt)
-            q = str(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-            if q == '2':
+            q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
+            if q == 2:
                 break
-            elif q != '1' and q != '2':
+            elif q != 1 and q != 2:
                 print(header.center(61))
                 print('CHỨC NĂNG KHÔNG HỢP LỆ, BẠN SẼ ĐƯỢC CHUYỂN ĐẾN MÀN HÌNH CHÍNH')
                 print(header.center(61))
         elif chucnang == '3':
             chucnang3(header, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt)
-            q = str(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-            if q == '2':
+            q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
+            if q == 2:
                 break
-            elif q != '1' and q != '2':
+            elif q != 1 and q != 2:
                 print(header.center(61))
                 print('CHỨC NĂNG KHÔNG HỢP LỆ, BẠN SẼ ĐƯỢC CHUYỂN ĐẾN MÀN HÌNH CHÍNH')
                 print(header.center(61))
