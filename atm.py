@@ -28,30 +28,74 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
             chucnang1(header, tk, tien, gioihan)
             q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
             if q == 1:
-                question1(header)
+                print(header.center(43))
+                print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                print(header.center(43))
             elif q == 2:
-                question2(header)
+                print(header.center(27))
+                print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                print(header.center(27))
                 break
             else:
-                question3(header)
+                quest = [0]
+                question(header, quest)
+                if quest[0] == 1:
+                    print(header.center(43))
+                    print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                    print(header.center(43))
+                elif quest[0] == 2:
+                    print(header.center(27))
+                    print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                    print(header.center(27))
+                    break
         elif chucnang == 2:
             chucnang2(header, tk, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt)
             q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-            if q == 2:
+            if q == 1:
+                print(header.center(43))
+                print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                print(header.center(43))
+            elif q == 2:
+                print(header.center(27))
+                print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                print(header.center(27))
                 break
-            elif q != 1 and q != 2:
-                print(header.center(61))
-                print('CHỨC NĂNG KHÔNG HỢP LỆ, BẠN SẼ ĐƯỢC CHUYỂN ĐẾN MÀN HÌNH CHÍNH')
-                print(header.center(61))
+            else:
+                quest = [0]
+                question(header, quest)
+                if quest[0] == 1:
+                    print(header.center(43))
+                    print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                    print(header.center(43))
+                elif quest[0] == 2:
+                    print(header.center(27))
+                    print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                    print(header.center(27))
+                    break
         elif chucnang == 3:
             chucnang3(header, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt)
             q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-            if q == 2:
+            if q == 1:
+                print(header.center(43))
+                print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                print(header.center(43))
+            elif q == 2:
+                print(header.center(27))
+                print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                print(header.center(27))
                 break
-            elif q != 1 and q != 2:
-                print(header.center(61))
-                print('CHỨC NĂNG KHÔNG HỢP LỆ, BẠN SẼ ĐƯỢC CHUYỂN ĐẾN MÀN HÌNH CHÍNH')
-                print(header.center(61))
+            else:
+                quest = [0]
+                question(header, quest)
+                if quest[0] == 1:
+                    print(header.center(43))
+                    print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                    print(header.center(43))
+                elif quest[0] == 2:
+                    print(header.center(27))
+                    print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                    print(header.center(27))
+                    break
         elif chucnang == 4:
             chucnang4(header, pin, stt)
             break
@@ -203,25 +247,17 @@ def chucnang4(header4, pin4, stt4):
             print(header4.center(32))
 
 
-def question1(header):
-    print(header.center(43))
-    print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
-    print(header.center(43))
-
-
-def question2(header):
-    print(header.center(27))
-    print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
-    print(header.center(27))
-
-
-def question3(header):
+def question(header, changequest):
     print(header.center(44))
     print('CHỨC NĂNG KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
     print(header.center(44))
     while True:
         q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
-        if q == 1 or q == 2:
+        if q == 1:
+            changequest[0] = 1
+            break
+        elif q == 2:
+            changequest[0] = 2
             break
         else:
             print(header.center(44))
