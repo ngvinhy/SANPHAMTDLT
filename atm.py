@@ -100,6 +100,9 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
             chucnang4(header, pin, stt)
             break
         elif chucnang == 0:
+            print(header.center(27))
+            print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+            print(header.center(27))
             break
         else:
             print(header.center(44))
