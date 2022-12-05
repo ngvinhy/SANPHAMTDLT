@@ -23,8 +23,8 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
             print(header.center(42))
             break
         print('*1. Tra cứu tài khoản\n*2. Rút tiền\n*3. Chuyển tiền\n*4. Thay đổi mã PIN\n*0. Thoát')
-        chucnang = str(input('CHỌN CHỨC NĂNG BẠN MUỐN SỬ DỤNG: '))
-        if chucnang == '1':
+        chucnang = int(input('CHỌN CHỨC NĂNG BẠN MUỐN SỬ DỤNG: '))
+        if chucnang == 1:
             chucnang1(header, tk, tien, gioihan)
             q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
             if q == 1:
@@ -34,7 +34,7 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
                 break
             else:
                 question3(header)
-        elif chucnang == '2':
+        elif chucnang == 2:
             chucnang2(header, tk, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt)
             q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
             if q == 2:
@@ -43,7 +43,7 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
                 print(header.center(61))
                 print('CHỨC NĂNG KHÔNG HỢP LỆ, BẠN SẼ ĐƯỢC CHUYỂN ĐẾN MÀN HÌNH CHÍNH')
                 print(header.center(61))
-        elif chucnang == '3':
+        elif chucnang == 3:
             chucnang3(header, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt)
             q = int(input('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không\nChọn: '))
             if q == 2:
@@ -52,10 +52,10 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
                 print(header.center(61))
                 print('CHỨC NĂNG KHÔNG HỢP LỆ, BẠN SẼ ĐƯỢC CHUYỂN ĐẾN MÀN HÌNH CHÍNH')
                 print(header.center(61))
-        elif chucnang == '4':
+        elif chucnang == 4:
             chucnang4(header, pin, stt)
             break
-        elif chucnang == '0':
+        elif chucnang == 0:
             break
         else:
             print(header.center(44))
