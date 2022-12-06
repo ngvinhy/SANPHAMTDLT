@@ -1,4 +1,4 @@
-def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, stt):
+def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
     header = '********************'
     dem = 1
     quest = [0]
@@ -23,15 +23,10 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
     print('BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG')
     print(header.center(27))
     while True:
-        if sodu_atm[0] <= 0:
-            print(header.center(42))
-            print('SỐ DƯ ATM ĐÃ HẾT, XIN VUI LÒNG THỬ LẠI SAU')
-            print(header.center(42))
-            break
         print('*1. Tra cứu tài khoản\n*2. Rút tiền\n*3. Chuyển tiền\n*4. Thay đổi mã PIN\n*0. Thoát')
         chucnang = input('CHỌN CHỨC NĂNG BẠN MUỐN SỬ DỤNG: ')
         if chucnang == '1':
-            chucnang1(header, tk, tien, gioihan)
+            chucnang1(header, tk, changesodu[stt], changehanmuc[stt])
             question(header, quest)
             if quest[0] == 1:
                 print(header.center(43))
@@ -43,29 +38,35 @@ def atm(tk, password, tien, gioihan, pin, changesodu, changehanmuc, sodu_atm, st
                 print(header.center(27))
                 break
         elif chucnang == '2':
-            chucnang2(header, tk, changesodu[stt], changehanmuc[stt], changehanmuc, changesodu, sodu_atm, stt)
-            question(header, quest)
-            if quest[0] == 1:
-                print(header.center(43))
-                print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
-                print(header.center(43))
-            elif quest[0] == 2:
-                print(header.center(27))
-                print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
-                print(header.center(27))
+            if sodu_atm[0] <= 0:
                 break
+            else:
+                chucnang2(header, tk, changesodu[stt], changehanmuc[stt], changehanmuc, changesodu, sodu_atm, stt)
+                question(header, quest)
+                if quest[0] == 1:
+                    print(header.center(43))
+                    print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                    print(header.center(43))
+                elif quest[0] == 2:
+                    print(header.center(27))
+                    print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                    print(header.center(27))
+                    break
         elif chucnang == '3':
-            chucnang3(header, changesodu[stt], changehanmuc[stt], changehanmuc, changesodu, sodu_atm, stt)
-            question(header, quest)
-            if quest[0] == 1:
-                print(header.center(43))
-                print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
-                print(header.center(43))
-            elif quest[0] == 2:
-                print(header.center(27))
-                print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
-                print(header.center(27))
+            if sodu_atm[0] <= 0:
                 break
+            else:
+                chucnang3(header, changesodu[stt], changehanmuc[stt], changehanmuc, changesodu, sodu_atm, stt)
+                question(header, quest)
+                if quest[0] == 1:
+                    print(header.center(43))
+                    print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                    print(header.center(43))
+                elif quest[0] == 2:
+                    print(header.center(27))
+                    print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                    print(header.center(27))
+                    break
         elif chucnang == '4':
             chucnang4(header, pin, stt)
             break
