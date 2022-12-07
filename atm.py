@@ -1,24 +1,19 @@
 def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
     header = '********************'
-    dem = 3
+    dem = 1
     quest = [0]
-    mapin = input(f'MÃ PIN (CÒN {dem} LẦN THỬ): ')
-    while True:
-        if dem != 1:
-            if mapin.isdigit():
-                if int(mapin) == password:
-                    break
-                else:
-                    dem -= 1
-                    mapin = input(f'MÃ PIN SAI (CÒN {dem} LẦN THỬ): ')
-            else:
-                dem -= 1
-                mapin = input(f'MÃ PIN PHẢI LÀ CHỮ SỐ (CÒN {dem} LẦN THỬ): ')
-        else:
+    mapin = input('MÃ PIN (CÒN 3 LẦN THỬ): ')
+    while dem <= 3:
+        if mapin == str(password):
+            break
+        if dem == 3:
             print(header.center(39))
             print('   SAI MÃ PIN QUÁ SỐ LẦN QUY ĐỊNH!!!\nTHẺ CỦA BẠN SẼ BỊ KHÓA TRONG ÍT PHÚT!!!')
             print(header.center(39))
             exit()
+        else:
+            mapin = input(f'MÃ PIN KHÔNG HỢP LỆ (CÒN {3 - dem} LẦN THỬ): ')
+            dem += 1
     print(header.center(27))
     print('BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG')
     print(header.center(27))
@@ -88,7 +83,6 @@ def chucnang1(header1, tk1, tien1, gioihan1):
 
 
 def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_atm2, stt2):
-    print(gioihan2)
     while True:
         if gioihan2 == 0:
             print(header2.center(43))
@@ -98,19 +92,17 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
         else:
             ruttien = input('NHẬP SỐ TIỀN CẦN RÚT: ')
             if ruttien.isdigit():
-                if int(ruttien) <= 0:
-                    print(header2.center(42))
-                    print('SỐ TIỀN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
-                    print(header2.center(42))
-                elif int(ruttien) > sodu_atm2[0]:
+                if int(ruttien) > sodu_atm2[0]:
                     print(header2.center(60))
                     print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI')
                     print(header2.center(60))
+                    continue
                 elif int(ruttien) <= tien2:
                     if gioihan2 < int(ruttien):
                         print(header2.center(67))
                         print('SỐ TIỀN VƯỢT QUÁ HẠN MỨC GIAO DỊCH TRONG NGÀY, XIN VUI LÒNG THỬ LẠI')
                         print(header2.center(67))
+                        continue
                     else:
                         if int(ruttien) % 50000 == 0:
                             tien2 = tien2 - int(ruttien)
@@ -154,7 +146,6 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
 
 
 def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, stt3):
-    print(gioihan3)
     while True:
         if gioihan3 == 0:
             print(header3.center(43))
@@ -166,12 +157,7 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
             if stk.isdigit():
                 chuyentien = input('NHẬP SỐ TIỀN CẦN CHUYỂN: ')
                 if chuyentien.isdigit():
-                    if int(chuyentien) <= 0:
-                        print(header3.center(42))
-                        print('SỐ TIỀN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
-                        print(header3.center(42))
-                        continue
-                    elif int(chuyentien) > sodu_atm3[0]:
+                    if int(chuyentien) > sodu_atm3[0]:
                         print(header3.center(60))
                         print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI')
                         print(header3.center(60))
