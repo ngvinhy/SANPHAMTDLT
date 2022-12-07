@@ -14,10 +14,10 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
                 if int(mapin) == password:
                     break
                 else:
-                    mapin = input(f'MÃ PIN KHÔNG HỢP LỆ (CÒN {3 - dem} LẦN THỬ): ')
+                    mapin = input(f'MÃ PIN SAI (CÒN {3 - dem} LẦN THỬ): ')
                     dem += 1
             else:
-                mapin = input(f'MÃ PIN KHÔNG HỢP LỆ (CÒN {3-dem} LẦN THỬ): ')
+                mapin = input(f'MÃ PIN PHẢI LÀ CHỮ SỐ (CÒN {3-dem} LẦN THỬ): ')
                 dem += 1
     print(header.center(27))
     print('BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG')
