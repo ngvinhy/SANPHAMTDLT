@@ -1,5 +1,5 @@
 def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
-    header = '********************'
+    header = '***************'
     dem = 1
     quest = [0]
     mapin = input('MÃ PIN (CÒN 3 LẦN THỬ): ')
@@ -223,26 +223,50 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
 
 def chucnang4(header4, pin4, stt4):
     while True:
-        oldpin = int(input('NHẬP MÃ PIN CŨ: '))
-        if oldpin == pin4[stt4]:
-            newpin = int(input('NHẬP MÃ PIN MỚI: '))
-            while True:
-                newpin1 = int(input('NHẬP LẠI MÃ PIN MỚI: '))
-                if newpin == newpin1:
-                    pin4[stt4] = newpin
-                    print(header4.center(80))
-                    print('BẠN ĐÃ THAY ĐỔI THÀNH CÔNG MÃ PIN, XIN VUI LÒNG ĐĂNG NHẬP LẠI ĐỂ SỬ DỤNG DỊCH VỤ')
-                    print(header4.center(80))
+        print(header4.center(15))
+        oldpin = input('  [*0. Thoát]\nNHẬP MÃ PIN CŨ: ')
+        if oldpin.isdigit():
+            if int(oldpin) == 0:
+                break
+            if int(oldpin) == pin4[stt4]:
+                newpin = input('NHẬP MÃ PIN MỚI: ')
+                if newpin.isdigit():
+                    if int(newpin) == 0:
+                        break
+                    while True:
+                        newpin1 = input('NHẬP LẠI MÃ PIN MỚI: ')
+                        if newpin1.isdigit():
+                            if int(newpin1) == 0:
+                                break
+                            if int(newpin) == int(newpin1):
+                                pin4[stt4] = int(newpin)
+                                print(header4.center(80))
+                                print('BẠN ĐÃ THAY ĐỔI THÀNH CÔNG MÃ PIN, XIN VUI LÒNG ĐĂNG NHẬP LẠI ĐỂ SỬ DỤNG DỊCH VỤ')
+                                print(header4.center(80))
+                                break
+                            else:
+                                print(header4.center(49))
+                                print('MÃ PIN MỚI KHÔNG TRÙNG KHỚP, XIN VUI LÒNG THỬ LẠI')
+                                print(header4.center(49))
+                                continue
+                        else:
+                            print(header4.center(43))
+                            print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
+                            print(header4.center(43))
+                            continue
                     break
                 else:
-                    print(header4.center(49))
-                    print('MÃ PIN MỚI KHÔNG TRÙNG KHỚP, XIN VUI LÒNG THỬ LẠI')
-                    print(header4.center(49))
-            break
+                    print(header4.center(43))
+                    print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
+                    print(header4.center(43))
+            else:
+                print(header4.center(32))
+                print('SAI MÃ PIN, XIN VUI LÒNG THỬ LẠI')
+                print(header4.center(32))
         else:
-            print(header4.center(32))
-            print('SAI MÃ PIN, XIN VUI LÒNG THỬ LẠI')
-            print(header4.center(32))
+            print(header4.center(43))
+            print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
+            print(header4.center(43))
 
 
 def question(header, changequest):
