@@ -64,7 +64,16 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
                     break
         elif chucnang == '4':
             chucnang4(header, pin, stt)
-            break
+            question(header, quest)
+            if quest[0] == 1:
+                print(header.center(43))
+                print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
+                print(header.center(43))
+            elif quest[0] == 2:
+                print(header.center(27))
+                print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
+                print(header.center(27))
+                break
         elif chucnang == '0':
             print(header.center(27))
             print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
@@ -90,21 +99,18 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
             print(header2.center(43))
             break
         else:
-            print(header2.center(24))
-            ruttien = input('       [*0. Thoát]\nNHẬP SỐ TIỀN CẦN RÚT: ')
+            print(header2.center(21))
+            print('     [*0. Thoát]')
+            ruttien = input('NHẬP SỐ TIỀN CẦN RÚT: ')
             if int(ruttien) == 0:
                 break
             if ruttien.isdigit():
                 if int(ruttien) > sodu_atm2[0]:
-                    print(header2.center(60))
-                    print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI')
-                    print(header2.center(60))
+                    print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI!!!')
                     continue
                 elif int(ruttien) <= tien2:
                     if gioihan2 < int(ruttien):
-                        print(header2.center(67))
-                        print('SỐ TIỀN VƯỢT QUÁ HẠN MỨC GIAO DỊCH TRONG NGÀY, XIN VUI LÒNG THỬ LẠI')
-                        print(header2.center(67))
+                        print('SỐ TIỀN VƯỢT QUÁ HẠN MỨC GIAO DỊCH TRONG NGÀY, XIN VUI LÒNG THỬ LẠI!!!')
                         continue
                     else:
                         if int(ruttien) % 50000 == 0:
@@ -131,19 +137,13 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
                                     print('CHỨC NĂNG KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
                                     print(header2.center(44))
                         else:
-                            print(header2.center(68))
-                            print('SỐ TIỀN GIAO DỊCH PHẢI LÀ BỘI SỐ CỦA 50000 VNĐ, XIN VUI LÒNG THỬ LẠI')
-                            print(header2.center(68))
+                            print('SỐ TIỀN GIAO DỊCH PHẢI LÀ BỘI SỐ CỦA 50000 VNĐ, XIN VUI LÒNG THỬ LẠI!!!')
                             continue
                 else:
-                    print(header2.center(36))
-                    print('SỐ DƯ KHÔNG ĐỦ, XIN VUI LÒNG THỬ LẠI')
-                    print(header2.center(36))
+                    print('SỐ DƯ KHÔNG ĐỦ, XIN VUI LÒNG THỬ LẠI!!!')
                     continue
             else:
-                print(header2.center(42))
-                print('SỐ TIỀN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
-                print(header2.center(42))
+                print('SỐ TIỀN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI!!!')
                 continue
         break
 
@@ -156,23 +156,22 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
             print(header3.center(43))
             break
         else:
+            print(header3.center(39))
+            print('              [*0. Thoát]')
             stk = input('NHẬP SỐ TÀI KHOẢN BẠN MUỐN CHUYỂN TIỀN: ')
+            if int(stk) == 0:
+                break
             if stk.isdigit():
-                print(header3.center(24))
-                chuyentien = input('       [*0. Thoát]\nNHẬP SỐ TIỀN CẦN CHUYỂN: ')
+                chuyentien = input('NHẬP SỐ TIỀN CẦN CHUYỂN: ')
                 if int(chuyentien) == 0:
                     break
                 if chuyentien.isdigit():
                     if int(chuyentien) > sodu_atm3[0]:
-                        print(header3.center(60))
-                        print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI')
-                        print(header3.center(60))
+                        print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI!!!')
                         continue
                     elif int(chuyentien) <= tien3:
                         if gioihan3 < int(chuyentien):
-                            print(header3.center(67))
-                            print('SỐ TIỀN VƯỢT QUÁ HẠN MỨC GIAO DỊCH TRONG NGÀY, XIN VUI LÒNG THỬ LẠI')
-                            print(header3.center(67))
+                            print('SỐ TIỀN VƯỢT QUÁ HẠN MỨC GIAO DỊCH TRONG NGÀY, XIN VUI LÒNG THỬ LẠI!!!')
                             continue
                         else:
                             if int(chuyentien) % 50000 == 0:
@@ -199,66 +198,62 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
                                         print('CHỨC NĂNG KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
                                         print(header3.center(44))
                             else:
-                                print(header3.center(68))
-                                print('SỐ TIỀN GIAO DỊCH PHẢI LÀ BỘI SỐ CỦA 50000 VNĐ, XIN VUI LÒNG THỬ LẠI')
-                                print(header3.center(68))
+                                print('SỐ TIỀN GIAO DỊCH PHẢI LÀ BỘI SỐ CỦA 50000 VNĐ, XIN VUI LÒNG THỬ LẠI!!!')
                                 continue
                     else:
-                        print(header3.center(36))
-                        print('SỐ DƯ KHÔNG ĐỦ, XIN VUI LÒNG THỬ LẠI')
-                        print(header3.center(36))
+                        print('SỐ DƯ KHÔNG ĐỦ, XIN VUI LÒNG THỬ LẠI!!!')
                         continue
                 else:
-                    print(header3.center(42))
-                    print('SỐ TIỀN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
-                    print(header3.center(42))
+                    print('SỐ TIỀN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI!!!')
                     continue
             else:
-                print(header3.center(47))
-                print('SỐ TÀI KHOẢN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
-                print(header3.center(47))
+                print('SỐ TÀI KHOẢN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI!!!')
                 continue
         break
 
 
 def chucnang4(header4, pin4, stt4):
+    print(header4.center(15))
+    print('  [*0. Thoát]')
     while True:
-        print(header4.center(15))
-        oldpin = input('  [*0. Thoát]\nNHẬP MÃ PIN CŨ: ')
+        oldpin = input('NHẬP MÃ PIN CŨ: ')
         if oldpin.isdigit():
             if int(oldpin) == 0:
                 break
             if int(oldpin) == pin4[stt4]:
-                newpin = input('NHẬP MÃ PIN MỚI: ')
-                if newpin.isdigit():
-                    if int(newpin) == 0:
-                        break
-                    while True:
-                        newpin1 = input('NHẬP LẠI MÃ PIN MỚI: ')
-                        if newpin1.isdigit():
-                            if int(newpin1) == 0:
-                                break
-                            if int(newpin) == int(newpin1):
-                                pin4[stt4] = int(newpin)
-                                print(header4.center(80))
-                                print('BẠN ĐÃ THAY ĐỔI THÀNH CÔNG MÃ PIN, XIN VUI LÒNG ĐĂNG NHẬP LẠI ĐỂ SỬ DỤNG DỊCH VỤ')
-                                print(header4.center(80))
-                                break
+                while True:
+                    newpin = input('NHẬP MÃ PIN MỚI: ')
+                    if newpin.isdigit():
+                        if int(newpin) == 0:
+                            break
+                        while True:
+                            newpin1 = input('NHẬP LẠI MÃ PIN MỚI: ')
+                            if newpin1.isdigit():
+                                if int(newpin1) == 0:
+                                    break
+                                if int(newpin) == int(newpin1):
+                                    pin4[stt4] = int(newpin)
+                                    print(header4.center(33))
+                                    print('BẠN ĐÃ THAY ĐỔI THÀNH CÔNG MÃ PIN')
+                                    print(header4.center(33))
+                                    break
+                                else:
+                                    print(header4.center(49))
+                                    print('MÃ PIN MỚI KHÔNG TRÙNG KHỚP, XIN VUI LÒNG THỬ LẠI')
+                                    print(header4.center(49))
+                                    continue
                             else:
-                                print(header4.center(49))
-                                print('MÃ PIN MỚI KHÔNG TRÙNG KHỚP, XIN VUI LÒNG THỬ LẠI')
-                                print(header4.center(49))
+                                print(header4.center(43))
+                                print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
+                                print(header4.center(43))
                                 continue
-                        else:
-                            print(header4.center(43))
-                            print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
-                            print(header4.center(43))
-                            continue
-                    break
-                else:
-                    print(header4.center(43))
-                    print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
-                    print(header4.center(43))
+                        break
+                    else:
+                        print(header4.center(43))
+                        print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
+                        print(header4.center(43))
+                        continue
+                break
             else:
                 print(header4.center(32))
                 print('SAI MÃ PIN, XIN VUI LÒNG THỬ LẠI')
