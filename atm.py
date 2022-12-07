@@ -90,7 +90,10 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
             print(header2.center(43))
             break
         else:
-            ruttien = input('NHẬP SỐ TIỀN CẦN RÚT: ')
+            print(header2.center(24))
+            ruttien = input('       [*0. Thoát]\nNHẬP SỐ TIỀN CẦN RÚT: ')
+            if int(ruttien) == 0:
+                break
             if ruttien.isdigit():
                 if int(ruttien) > sodu_atm2[0]:
                     print(header2.center(60))
@@ -155,7 +158,10 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
         else:
             stk = input('NHẬP SỐ TÀI KHOẢN BẠN MUỐN CHUYỂN TIỀN: ')
             if stk.isdigit():
-                chuyentien = input('NHẬP SỐ TIỀN CẦN CHUYỂN: ')
+                print(header3.center(24))
+                chuyentien = input('       [*0. Thoát]\nNHẬP SỐ TIỀN CẦN CHUYỂN: ')
+                if int(chuyentien) == 0:
+                    break
                 if chuyentien.isdigit():
                     if int(chuyentien) > sodu_atm3[0]:
                         print(header3.center(60))
