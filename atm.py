@@ -1,24 +1,24 @@
 def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
     header = '********************'
-    dem = 1
+    dem = 3
     quest = [0]
-    mapin = input('MÃ PIN: ')
-    while dem <= 3:
-        if dem == 3:
-            print(header.center(39))
-            print('   SAI MÃ PIN QUÁ SỐ LẦN QUY ĐỊNH!!!\nTHẺ CỦA BẠN SẼ BỊ KHÓA TRONG ÍT PHÚT!!!')
-            print(header.center(39))
-            exit()
-        else:
+    mapin = input(f'MÃ PIN (CÒN {dem} LẦN THỬ): ')
+    while True:
+        if dem != 1:
             if mapin.isdigit():
                 if int(mapin) == password:
                     break
                 else:
-                    mapin = input(f'MÃ PIN SAI (CÒN {3 - dem} LẦN THỬ): ')
-                    dem += 1
+                    dem -= 1
+                    mapin = input(f'MÃ PIN SAI (CÒN {dem} LẦN THỬ): ')
             else:
-                mapin = input(f'MÃ PIN PHẢI LÀ CHỮ SỐ (CÒN {3-dem} LẦN THỬ): ')
-                dem += 1
+                dem -= 1
+                mapin = input(f'MÃ PIN PHẢI LÀ CHỮ SỐ (CÒN {dem} LẦN THỬ): ')
+        else:
+            print(header.center(39))
+            print('   SAI MÃ PIN QUÁ SỐ LẦN QUY ĐỊNH!!!\nTHẺ CỦA BẠN SẼ BỊ KHÓA TRONG ÍT PHÚT!!!')
+            print(header.center(39))
+            exit()
     print(header.center(27))
     print('BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG')
     print(header.center(27))
