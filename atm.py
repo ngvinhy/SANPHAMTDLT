@@ -129,7 +129,7 @@ def chucnang2(header, tk,  tien, gioihan, changehanmuc, changesodu, sodu_atm, st
         print('     [*0. Thoát]')
         while True:
             ruttien = input('NHẬP SỐ TIỀN CẦN RÚT: ')
-            if int(ruttien) == 0:
+            if ruttien == '0':
                 break
             if ruttien.isdigit():
                 if int(ruttien) > sodu_atm[0]:
@@ -180,11 +180,11 @@ def chucnang3(header, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt):
         print('              [*0. Thoát]')
         while True:
             stk = input('NHẬP SỐ TÀI KHOẢN BẠN MUỐN CHUYỂN TIỀN: ')
-            if int(stk) == 0:
+            if stk == '0':
                 break
             if stk.isdigit():
                 chuyentien = input('NHẬP SỐ TIỀN CẦN CHUYỂN: ')
-                if int(chuyentien) == 0:
+                if chuyentien == '0':
                     break
                 if chuyentien.isdigit():
                     if int(chuyentien) > sodu_atm[0]:
