@@ -119,15 +119,15 @@ def chucnang1(header1, tk1, tien1, gioihan1):
 
 
 def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_atm2, stt2):
-    while True:
-        if gioihan2 == 0:
-            print(header2.center(43))
-            print('HẠN MỨC GIAO DỊCH TRONG NGÀY CỦA BẠN ĐÃ HẾT')
-            print(header2.center(43))
-            break
-        else:
-            print(header2.center(21))
-            print('     [*0. Thoát]')
+    if gioihan2 == 0:
+        print(header2.center(43))
+        print('HẠN MỨC GIAO DỊCH TRONG NGÀY CỦA BẠN ĐÃ HẾT')
+        print(header2.center(43))
+        return
+    else:
+        print(header2.center(21))
+        print('     [*0. Thoát]')
+        while True:
             ruttien = input('NHẬP SỐ TIỀN CẦN RÚT: ')
             if int(ruttien) == 0:
                 break
@@ -170,15 +170,15 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
 
 
 def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, stt3):
-    while True:
-        if gioihan3 == 0:
-            print(header3.center(43))
-            print('HẠN MỨC GIAO DỊCH TRONG NGÀY CỦA BẠN ĐÃ HẾT')
-            print(header3.center(43))
-            break
-        else:
-            print(header3.center(39))
-            print('              [*0. Thoát]')
+    if gioihan3 == 0:
+        print(header3.center(43))
+        print('HẠN MỨC GIAO DỊCH TRONG NGÀY CỦA BẠN ĐÃ HẾT')
+        print(header3.center(43))
+        return
+    else:
+        print(header3.center(39))
+        print('              [*0. Thoát]')
+        while True:
             stk = input('NHẬP SỐ TÀI KHOẢN BẠN MUỐN CHUYỂN TIỀN: ')
             if int(stk) == 0:
                 break

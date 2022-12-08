@@ -1,7 +1,6 @@
 from atm import atm
 from dulieu import tenkh, tentk, mk, sodu, hanmuc, sodunganhang
 header = '********************'
-
 while True:
     if sodunganhang[0] <= 0:
         print(header.center(42))
