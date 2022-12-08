@@ -112,55 +112,55 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
             print(header.center(44))
 
 
-def chucnang1(header1, tk1, tien1, gioihan1):
-    print(header1.center(27))
-    print(f'CHỦ THẺ: {tk1} \nSỐ DƯ: {tien1} VNĐ \nHẠN MỨC GIAO DỊCH: {gioihan1} VNĐ')
-    print(header1.center(27))
+def chucnang1(header, tk, tien, gioihan):
+    print(header.center(27))
+    print(f'CHỦ THẺ: {tk} \nSỐ DƯ: {tien} VNĐ \nHẠN MỨC GIAO DỊCH: {gioihan} VNĐ')
+    print(header.center(27))
 
 
-def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_atm2, stt2):
-    if gioihan2 == 0:
-        print(header2.center(43))
+def chucnang2(header, tk,  tien, gioihan, changehanmuc, changesodu, sodu_atm, stt):
+    if gioihan == 0:
+        print(header.center(43))
         print('HẠN MỨC GIAO DỊCH TRONG NGÀY CỦA BẠN ĐÃ HẾT')
-        print(header2.center(43))
+        print(header.center(43))
         return
     else:
-        print(header2.center(21))
+        print(header.center(21))
         print('     [*0. Thoát]')
         while True:
             ruttien = input('NHẬP SỐ TIỀN CẦN RÚT: ')
             if int(ruttien) == 0:
                 break
             if ruttien.isdigit():
-                if int(ruttien) > sodu_atm2[0]:
+                if int(ruttien) > sodu_atm[0]:
                     print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI!!!')
-                elif int(ruttien) <= tien2:
-                    if gioihan2 < int(ruttien):
+                elif int(ruttien) <= tien:
+                    if gioihan < int(ruttien):
                         print('SỐ TIỀN VƯỢT QUÁ HẠN MỨC GIAO DỊCH TRONG NGÀY, XIN VUI LÒNG THỬ LẠI!!!')
                     else:
                         if int(ruttien) % 50000 == 0:
-                            tien2 = tien2 - int(ruttien)
-                            changesodu2[stt2] = tien2
-                            sodu_atm2[0] -= int(ruttien)
-                            gioihan2 = gioihan2 - int(ruttien)
-                            changehanmuc2[stt2] = gioihan2
+                            tien = tien - int(ruttien)
+                            changesodu[stt] = tien
+                            sodu_atm[0] -= int(ruttien)
+                            gioihan = gioihan - int(ruttien)
+                            changehanmuc[stt] = gioihan
                             print('BẠN CÓ MUỐN NHẬN HÓA ĐƠN KHÔNG?\n*1. Có\n*2. Không')
                             while True:
                                 bienlai = input('Chọn: ')
                                 if bienlai == '1':
-                                    print(header2.center(27))
-                                    print(f'CHỦ THẺ: {tk2}\nSỐ TIỀN ĐÃ RÚT: {int(ruttien)} VNĐ\nSỐ DƯ: {tien2} VNĐ')
-                                    print(header2.center(27))
+                                    print(header.center(27))
+                                    print(f'CHỦ THẺ: {tk}\nSỐ TIỀN ĐÃ RÚT: {int(ruttien)} VNĐ\nSỐ DƯ: {tien} VNĐ')
+                                    print(header.center(27))
                                     return
                                 elif bienlai == '2':
-                                    print(header2.center(48))
+                                    print(header.center(48))
                                     print('GIAO DỊCH HOÀN THÀNH, XIN VUI LÒNG ĐỢI NHẬN TIỀN')
-                                    print(header2.center(48))
+                                    print(header.center(48))
                                     return
                                 else:
-                                    print(header2.center(44))
+                                    print(header.center(44))
                                     print('CHỨC NĂNG KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
-                                    print(header2.center(44))
+                                    print(header.center(44))
                         else:
                             print('SỐ TIỀN GIAO DỊCH PHẢI LÀ BỘI SỐ CỦA 50000 VNĐ, XIN VUI LÒNG THỬ LẠI!!!')
                 else:
@@ -169,14 +169,14 @@ def chucnang2(header2, tk2,  tien2, gioihan2, changehanmuc2, changesodu2, sodu_a
                 print('SỐ TIỀN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI!!!')
 
 
-def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, stt3):
-    if gioihan3 == 0:
-        print(header3.center(43))
+def chucnang3(header, tien, gioihan, changehanmuc, changesodu, sodu_atm, stt):
+    if gioihan == 0:
+        print(header.center(43))
         print('HẠN MỨC GIAO DỊCH TRONG NGÀY CỦA BẠN ĐÃ HẾT')
-        print(header3.center(43))
+        print(header.center(43))
         return
     else:
-        print(header3.center(39))
+        print(header.center(39))
         print('              [*0. Thoát]')
         while True:
             stk = input('NHẬP SỐ TÀI KHOẢN BẠN MUỐN CHUYỂN TIỀN: ')
@@ -187,35 +187,35 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
                 if int(chuyentien) == 0:
                     break
                 if chuyentien.isdigit():
-                    if int(chuyentien) > sodu_atm3[0]:
+                    if int(chuyentien) > sodu_atm[0]:
                         print('ATM KHÔNG ĐỦ SỐ DƯ THỰC HIỆN GIAO DỊCH, XIN VUI LÒNG THỬ LẠI!!!')
-                    elif int(chuyentien) <= tien3:
-                        if gioihan3 < int(chuyentien):
+                    elif int(chuyentien) <= tien:
+                        if gioihan < int(chuyentien):
                             print('SỐ TIỀN VƯỢT QUÁ HẠN MỨC GIAO DỊCH TRONG NGÀY, XIN VUI LÒNG THỬ LẠI!!!')
                         else:
                             if int(chuyentien) % 50000 == 0:
-                                tien3 = tien3 - int(chuyentien)
-                                changesodu3[stt3] = tien3
-                                sodu_atm3[0] -= int(chuyentien)
-                                gioihan3 = gioihan3 - int(chuyentien)
-                                changehanmuc3[stt3] = gioihan3
+                                tien = tien - int(chuyentien)
+                                changesodu[stt] = tien
+                                sodu_atm[0] -= int(chuyentien)
+                                gioihan = gioihan - int(chuyentien)
+                                changehanmuc[stt] = gioihan
                                 print('BẠN CÓ MUỐN NHẬN HÓA ĐƠN KHÔNG?\n*1. Có\n*2. Không')
                                 while True:
                                     bienlai = input('Chọn: ')
                                     if bienlai == '1':
-                                        print(header3.center(27))
-                                        print(f'SỐ TÀI KHOẢN NGƯỜI NHẬN: {stk}\nSỐ TIỀN ĐÃ CHUYỂN: {int(chuyentien)} VNĐ\nSỐ DƯ: {tien3} VNĐ')
-                                        print(header3.center(27))
+                                        print(header.center(27))
+                                        print(f'SỐ TÀI KHOẢN NGƯỜI NHẬN: {stk}\nSỐ TIỀN ĐÃ CHUYỂN: {int(chuyentien)} VNĐ\nSỐ DƯ: {tien} VNĐ')
+                                        print(header.center(27))
                                         return
                                     elif bienlai == '2':
-                                        print(header3.center(20))
+                                        print(header.center(20))
                                         print('GIAO DỊCH HOÀN THÀNH')
-                                        print(header3.center(20))
+                                        print(header.center(20))
                                         return
                                     else:
-                                        print(header3.center(44))
+                                        print(header.center(44))
                                         print('CHỨC NĂNG KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI')
-                                        print(header3.center(44))
+                                        print(header.center(44))
                             else:
                                 print('SỐ TIỀN GIAO DỊCH PHẢI LÀ BỘI SỐ CỦA 50000 VNĐ, XIN VUI LÒNG THỬ LẠI!!!')
                     else:
@@ -226,48 +226,49 @@ def chucnang3(header3, tien3, gioihan3, changehanmuc3, changesodu3, sodu_atm3, s
                 print('SỐ TÀI KHOẢN KHÔNG HỢP LỆ, XIN VUI LÒNG THỬ LẠI!!!')
 
 
-def chucnang4(header4, pin4, stt4):
-    print(header4.center(15))
+def chucnang4(header, pin, stt):
+    print(header.center(15))
     print('  [*0. Thoát]')
     while True:
         oldpin = input('NHẬP MÃ PIN CŨ: ')
         if oldpin.isdigit():
             if int(oldpin) == 0:
                 break
-            if int(oldpin) == pin4[stt4]:
+            if int(oldpin) == pin[stt]:
                 while True:
                     newpin = input('NHẬP MÃ PIN MỚI: ')
                     if newpin.isdigit():
                         if int(newpin) == 0:
                             return
-                        while True:
-                            newpin1 = input('NHẬP LẠI MÃ PIN MỚI: ')
-                            if newpin1.isdigit():
-                                if int(newpin1) == 0:
-                                    return
-                                if int(newpin) == int(newpin1):
-                                    pin4[stt4] = int(newpin)
-                                    print(header4.center(33))
-                                    print('BẠN ĐÃ THAY ĐỔI THÀNH CÔNG MÃ PIN')
-                                    print(header4.center(33))
-                                    return
+                        else:
+                            while True:
+                                newpin1 = input('NHẬP LẠI MÃ PIN MỚI: ')
+                                if newpin1.isdigit():
+                                    if int(newpin1) == 0:
+                                        return
+                                    if int(newpin) == int(newpin1):
+                                        pin[stt] = int(newpin)
+                                        print(header.center(33))
+                                        print('BẠN ĐÃ THAY ĐỔI THÀNH CÔNG MÃ PIN')
+                                        print(header.center(33))
+                                        return
+                                    else:
+                                        print(header.center(49))
+                                        print('MÃ PIN MỚI KHÔNG TRÙNG KHỚP, XIN VUI LÒNG THỬ LẠI')
+                                        print(header.center(49))
                                 else:
-                                    print(header4.center(49))
-                                    print('MÃ PIN MỚI KHÔNG TRÙNG KHỚP, XIN VUI LÒNG THỬ LẠI')
-                                    print(header4.center(49))
-                            else:
-                                print(header4.center(43))
-                                print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
-                                print(header4.center(43))
+                                    print(header.center(43))
+                                    print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
+                                    print(header.center(43))
                     else:
-                        print(header4.center(43))
+                        print(header.center(43))
                         print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
-                        print(header4.center(43))
+                        print(header.center(43))
             else:
-                print(header4.center(32))
+                print(header.center(32))
                 print('SAI MÃ PIN, XIN VUI LÒNG THỬ LẠI')
-                print(header4.center(32))
+                print(header.center(32))
         else:
-            print(header4.center(43))
+            print(header.center(43))
             print('MÃ PIN PHẢI LÀ CHỮ SỐ, XIN VUI LÒNG THỬ LẠI')
-            print(header4.center(43))
+            print(header.center(43))
