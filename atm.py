@@ -24,12 +24,12 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
             print('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không')
             while True:
                 q = input('Chọn: ')
-                if int(q) == 1:
+                if q == '1':
                     print(header.center(43))
                     print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
                     print(header.center(43))
                     break
-                elif int(q) == 2:
+                elif q == '2':
                     print(header.center(27))
                     print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
                     print(header.center(27))
@@ -48,12 +48,12 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
                 print('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không')
                 while True:
                     q = input('Chọn: ')
-                    if int(q) == 1:
+                    if q == '1':
                         print(header.center(43))
                         print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
                         print(header.center(43))
                         break
-                    elif int(q) == 2:
+                    elif q == '2':
                         print(header.center(27))
                         print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
                         print(header.center(27))
@@ -72,12 +72,12 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
                 print('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không')
                 while True:
                     q = input('Chọn: ')
-                    if int(q) == 1:
+                    if q == '1':
                         print(header.center(43))
                         print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
                         print(header.center(43))
                         break
-                    elif int(q) == 2:
+                    elif q == '2':
                         print(header.center(27))
                         print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
                         print(header.center(27))
@@ -91,12 +91,12 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
             print('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không')
             while True:
                 q = input('Chọn: ')
-                if int(q) == 1:
+                if q == '1':
                     print(header.center(43))
                     print('BẠN SẼ ĐƯỢC CHUYỂN HƯỚNG ĐẾN MÀN HÌNH CHÍNH')
                     print(header.center(43))
                     break
-                elif int(q) == 2:
+                elif q == '2':
                     print(header.center(27))
                     print('BẠN ĐÃ ĐĂNG XUẤT THÀNH CÔNG')
                     print(header.center(27))
