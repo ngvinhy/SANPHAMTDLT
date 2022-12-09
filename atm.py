@@ -1,7 +1,7 @@
 def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
     header = '***************'
     dem = 1
-    mapin = input('MÃ PIN (CÒN 3 LẦN THỬ): ')
+    mapin = input('MÃ PIN (CÓ 3 LẦN THỬ): ')
     while dem <= 3:
         if mapin == str(password):
             break
@@ -40,7 +40,9 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
                     print(header.center(44))
         elif chucnang == '2':
             if sodu_atm[0] <= 0:
-                break
+                print(header.center(68))
+                print('SỐ DƯ ATM ĐÃ HẾT, BẠN KHÔNG THỂ SỬ DỤNG CHỨC NĂNG RÚT VÀ CHUYỂN TIỀN')
+                print(header.center(68))
             else:
                 chucnang2(header, tk, changesodu[stt], changehanmuc[stt], changehanmuc, changesodu, sodu_atm, stt)
                 print('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không')
@@ -62,7 +64,9 @@ def atm(tk, password, pin, changesodu, changehanmuc, sodu_atm, stt):
                         print(header.center(44))
         elif chucnang == '3':
             if sodu_atm[0] <= 0:
-                break
+                print(header.center(68))
+                print('SỐ DƯ ATM ĐÃ HẾT, BẠN KHÔNG THỂ SỬ DỤNG CHỨC NĂNG RÚT VÀ CHUYỂN TIỀN')
+                print(header.center(68))
             else:
                 chucnang3(header, changesodu[stt], changehanmuc[stt], changehanmuc, changesodu, sodu_atm, stt)
                 print('BẠN CÓ MUỐN TIẾP TỤC SỬ DỤNG DỊCH VỤ KHÔNG?\n*1. Có\n*2. Không')
